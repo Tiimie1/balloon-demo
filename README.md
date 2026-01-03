@@ -114,3 +114,6 @@ java.lang.ClassCastException: com.skydoves.balloon.radius.RadiusLayout
 cannot be cast to androidx.constraintlayout.widget.ConstraintLayout
 ```
 Problem ker balloon "wrapa" nas layout v RadiusLayout, getContentView() vraca ta wrapper ne pa nas ConstraintLayout. View binding's bind() pricakuje root da bo ConstraintLayout. Namesto bindinga uporabimo findById.
+
+Zaslonski posnetek
+![Zaslonski posnetek](./screenshots/alerts-popup.png)
