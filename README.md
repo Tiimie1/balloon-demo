@@ -41,7 +41,7 @@ Knjižnica je aktivno vzdrževana z pogostimi posodobitvami odvisnosti ("depende
 
 Touturial manager, skrbi za prikaz, in zapiranje balloonov
 
-```
+```kotlin
 class TutorialManager(private val activity: MainActivity) {
 
     private var currentBalloon: Balloon? = null
@@ -112,7 +112,7 @@ class TutorialManager(private val activity: MainActivity) {
 
 Uporaba v main activitiju
 
-```
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState)
   ...
