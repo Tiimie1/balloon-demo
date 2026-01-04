@@ -1,6 +1,6 @@
 # PORA - Kolokvij naloga
 
-Ime in priimek: **Tim Pangersic**
+Ime in priimek: **Tim Pangersic**  
 Izbrana knjižnjica: https://github.com/skydoves/Balloon
 
 ## Utemeljitev izbire
@@ -9,12 +9,12 @@ Aplikacijo iz druge naloge sem imel že predčasno zasnovano. Želel sem nadgrad
 
 ## Prednosti in slabosti
 
-:white_check_mark: Customizacija: podpora za custom layoute, puščice, barve, besedilo, ..
-:white_check_mark: Animacije: privzete animacije (fase, overshoot, elastic, circular...)
-:white_check_mark: Sekvenčno prikazovanje popupov
-:white_check_mark: Varnost pred memory leakom, intetgracija integracija Android življenjskega cikla preko setLifecycleOwner() metode
-:white_check_mark: Preprosta uporaba
-:x:  Minimalna verzija android apija – Requires API 21+ 
+:white_check_mark: Customizacija: podpora za custom layoute, puščice, barve, besedilo, ..  
+:white_check_mark: Animacije: privzete animacije (fase, overshoot, elastic, circular...)  
+:white_check_mark: Sekvenčno prikazovanje popupov  
+:white_check_mark: Varnost pred memory leakom, intetgracija integracija Android življenjskega cikla preko setLifecycleOwner() metode  
+:white_check_mark: Preprosta uporaba  
+:x:  Minimalna verzija android apija – Requires API 21+   
 :x:  Dodatne odvisne knjižnjice("dependencies"), povečanje velikosti aplikacije
 
 ## Licenca
@@ -115,5 +115,6 @@ cannot be cast to androidx.constraintlayout.widget.ConstraintLayout
 ```
 Problem ker balloon "wrapa" nas layout v RadiusLayout, getContentView() vraca ta wrapper ne pa nas ConstraintLayout. View binding's bind() pricakuje root da bo ConstraintLayout. Namesto bindinga uporabimo findById.
 
-Zaslonski posnetek
-![Zaslonski posnetek](./screenshots/alerts-popup.png)
+### Zaslonski posnetek
+
+<img src="./screenshots/alerts-popup.png" height="500"> </img>
