@@ -1,40 +1,40 @@
 # PORA - Kolokvij naloga
 
 Ime in priimek: **Tim Pangersic**  
-Izbrana knjižnjica: https://github.com/skydoves/Balloon
+Izbrana knjižnica: https://github.com/skydoves/Balloon
 
 ## Utemeljitev izbire
 
-Aplikacijo iz druge naloge sem imel že predčasno zasnovano. Želel sem nadgraditi čelni del aplikacije. Po [urejenemu seznamu](https://github.com/mcxiaoke/awesome-kotlin) najbolj priljubljenih knjižnic za Kotlin sem naletel na knjižnico [Balloon](https://github.com/skydoves/Balloon). Knjižnica mi je predstavljala preprosto rešitev za dva problema, ki sem ju želel rešiti. Prvič so bile navigacijske ikone za uporabnika lahko nerazumljive, razmšljal sem o uvodni predstavitvi ("toutirual statu"), kjer bi sledil če je to uporabnikov prvi zagon aplikacije in v tem primeru bi "popupi" s kliki na next vodili uporabnika cež ključne funkcionalnosti aplikacije. Drugi v primeru da gre za opis glavnega podatkovnega objekta je kartica v RecyclerView-u bila prevelika in moteča za uporabnika. Smiselno je pokazati celoten objekt samo ob kliku na "preberi več" ali ob kliku na kartico. Prikaz preprostega dialoga se mi je zdel boljša rešitev z vidika uporabniške izkušnje v primerjavi s fragmentom za podrobnosti. Izbira je bila dokončna ob pregledu primerov na github strani, ki je namigovala na zelo preprosto uporabo in moznost  [sekvenčnega prikazovanja](https://github.com/skydoves/Balloon#show-up-balloon-sequentially) popupov , ki bi bil smiselen za toururial.
+Aplikacijo iz druge naloge sem imel že predčasno zasnovano. Želel sem nadgraditi čelni del aplikacije. Po [urejenemu seznamu](https://github.com/mcxiaoke/awesome-kotlin) najbolj priljubljenih knjižnic za Kotlin sem naletel na knjižnico [Balloon](https://github.com/skydoves/Balloon). Knjižnica mi je predstavljala preprosto rešitev za dva problema, ki sem ju želel rešiti. Prvič so bile navigacijske ikone za uporabnika lahko nerazumljive, razmišljal sem o uvodni predstavitvi ("tutorial stanju"), kjer bi sledil, če je to uporabnikov prvi zagon aplikacije, in v tem primeru bi "popupi" s kliki na next vodili uporabnika čez ključne funkcionalnosti aplikacije. Drugi v primeru da gre za opis glavnega podatkovnega objekta je kartica v RecyclerView-u bila prevelika in moteča za uporabnika. Smiselno je pokazati celoten objekt samo ob kliku na "preberi več" ali ob kliku na kartico. Prikaz preprostega dialoga se mi je zdel boljša rešitev z vidika uporabniške izkušnje v primerjavi s fragmentom za podrobnosti. Izbira je bila dokončna ob pregledu primerov na github strani, ki je namigovala na zelo preprosto uporabo in možnost [sekvenčnega prikazovanja](https://github.com/skydoves/Balloon#show-up-balloon-sequentially) popupov, ki bi bil smiselen za tutorial.
 
 ## Prednosti in slabosti
 
 :white_check_mark: Customizacija: podpora za custom layoute, puščice, barve, besedilo, ..  
-:white_check_mark: Animacije: privzete animacije (fase, overshoot, elastic, circular...)  
+:white_check_mark: Animacije: privzete animacije (fade, overshoot, elastic, circular...)  
 :white_check_mark: Sekvenčno prikazovanje popupov  
-:white_check_mark: Varnost pred memory leakom, intetgracija integracija Android življenjskega cikla preko setLifecycleOwner() metode  
+:white_check_mark: Varnost pred memory leakom, integracija Android življenjskega cikla preko setLifecycleOwner() metode  
 :white_check_mark: Preprosta uporaba  
 :x:  Minimalna verzija android apija – Requires API 21+   
-:x:  Dodatne odvisne knjižnjice("dependencies"), povečanje velikosti aplikacije
+:x:  Dodatne odvisne knjižnice ("dependencies"), povečanje velikosti aplikacije
 
 ## Licenca
 
-**Apache License 2.0**: Open-source licenca, ki dovoljuje uporabo za komercialne namene, modifikacijo knjižnjice, distribucijo in privatno uporabo
+**Apache License 2.0**: Open-source licenca, ki dovoljuje uporabo za komercialne namene, modifikacijo knjižnice, distribucijo in privatno uporabo
 
-## Število uporabnkov
+## Število uporabnikov
 
-Aplikacija zabeleži približno 800 000 mesečnih prenosov. 3900 zvezdic na Githubu in 307 forkov. To kaže na popularnost knjiznice in pozitiven odziv uporabnikov.
+Aplikacija beleži približno 800 000 mesečnih prenosov. 3900 zvezdic na Githubu in 307 forkov. To kaže na popularnost knjižnice in pozitiven odziv uporabnikov.
 
 ## Vzdrževanje
 
-Knjiznica je odprtokodna, kar pomeni da jo vdržuje publika. v času pisanja ima 31 vdrževalcev, pri nadgradnjam in vzdrževanju pa lahko prispeva kdorkoli. Glavni developer je [skydoves](https://github.com/skydoves) ki je zelo aktiven in priznan v android odptokodnem svetu. 
-Knjiznica je aktivno vdrževana z pogostimi posodobitvami in posodobitvami odvisnosti ("dependencies bumps"), beleži 1410 commitov, zadnja verzija pa je bila objavljena 28. decembra 2025. 
+Knjižnica je odprtokodna, kar pomeni, da jo vzdržuje publika. V času pisanja ima 31 vzdrževalcev, pri nadgradnjah in vzdrževanju pa lahko prispeva kdorkoli. Glavni developer je [skydoves](https://github.com/skydoves), ki je zelo aktiven in priznan v android odprtokodnem svetu. 
+Knjižnica je aktivno vzdrževana z pogostimi posodobitvami odvisnosti ("dependencies bumps"), beleži 1410 commitov, zadnja verzija pa je bila objavljena 28. decembra 2025. 
 
 ## Časovna in prostorska zahtevnost
 
-**Casnovna zahtevnost**: O(1) Za prikaz (inflating view-ja, pozicioniranje) in odmik dialoga, nikakrsnih zank ki bi povecale casovno zahtevnost.
+**Časovna zahtevnost**: O(1) Za prikaz (inflating view-ja, pozicioniranje) in odmik dialoga, nikakršnih zank, ki bi povečale časovno zahtevnost.
 
-**Prostorska zahtevnost**: O(1) Vsaka instanca ballona (dialoga) drži svojo konfiguracijo in view hierarhijo. knjižnjica je lightweight, prostorska zahtevnost temelji predvsem na kompleksnosti custom layoutov ali slik.. 
+**Prostorska zahtevnost**: O(1) Vsaka instanca ballona (dialoga) drži svojo konfiguracijo in view hierarhijo. Knjižnica je lightweight, prostorska zahtevnost temelji predvsem na kompleksnosti custom layoutov ali slik. 
 
 ## Primer uporabe v drugi aplikaciji
 
@@ -46,7 +46,7 @@ holder.itemView.setOnClickListener { view ->
 	clickListener.onMessageClick(message, view)
 }
 ```
-Definiramo odprtje balloon dialoga ob kliku na message. v setLayout smo poslali nas custom xml za izgled dialoga. z getContentView na balloon lahko dostopamo do fieldov v layoutu in jim nastavimo fielde. Dodali smo eno od privzetih animacij "ELASTIC" na prikaz balloona,
+Definiramo odprtje balloon dialoga ob kliku na message. V setLayout smo poslali naš custom xml za izgled dialoga. Z getContentView na balloon lahko dostopamo do fieldov v layoutu in jim nastavimo vrednosti. Dodali smo eno od privzetih animacij "ELASTIC" na prikaz balloona.
 ```kotlin
 override fun onMessageClick(message: Message, view: View) {
 	val iconResource = when (message.type) {
@@ -75,7 +75,7 @@ override fun onMessageClick(message: Message, view: View) {
   }
 ```
 
-Impelemntiramo custom layout za popup.
+Implementiramo custom layout za popup.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -113,7 +113,7 @@ FATAL EXCEPTION: main
 java.lang.ClassCastException: com.skydoves.balloon.radius.RadiusLayout
 cannot be cast to androidx.constraintlayout.widget.ConstraintLayout
 ```
-Problem ker balloon "wrapa" nas layout v RadiusLayout, getContentView() vraca ta wrapper ne pa nas ConstraintLayout. View binding's bind() pricakuje root da bo ConstraintLayout. Namesto bindinga uporabimo findById.
+Problem, ker balloon "wrapa" naš layout v RadiusLayout, getContentView() vrača ta wrapper, ne pa naš ConstraintLayout. View binding's bind() pričakuje, da bo root ConstraintLayout. Namesto bindinga uporabimo findViewById.
 
 ### Zaslonski posnetek
 
