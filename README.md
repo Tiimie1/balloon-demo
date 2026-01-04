@@ -36,6 +36,102 @@ Knjižnica je aktivno vzdrževana z pogostimi posodobitvami odvisnosti ("depende
 
 **Prostorska zahtevnost**: O(1) Vsaka instanca ballona (dialoga) drži svojo konfiguracijo in view hierarhijo. Knjižnica je lightweight, prostorska zahtevnost temelji predvsem na kompleksnosti custom layoutov ali slik. 
 
+
+## Primer uporabe
+
+Touturial manager, skrbi za prikaz, in zapiranje balloonov
+
+```
+class TutorialManager(private val activity: MainActivity) {
+
+    private var currentBalloon: Balloon? = null
+
+    fun startTutorial() {
+        val navHostFragment = activity.supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        val firstFragment = navHostFragment.childFragmentManager
+            .fragments?.firstOrNull() as FirstFragment
+
+        firstFragment.view?.post {
+            val nextButton = firstFragment.view?.findViewById<Button>(R.id.button_first)
+            nextButton?.let { showFirstBalloon(it) }
+        }
+    }
+
+    private fun showFirstBalloon(nextButton: View) {
+        currentBalloon = Balloon.Builder(activity)
+            .setText("Press here to navigate to the second fragment")
+            .setTextColorResource(android.R.color.white)
+            .setTextSize(16f)
+            .setPadding(12)
+            .setArrowSize(10)
+            .setArrowOrientation(ArrowOrientation.BOTTOM)
+            .setArrowPosition(0.5f)
+            .setCornerRadius(8f)
+            .setBackgroundColorResource(android.R.color.holo_blue_dark)
+            .setBalloonAnimation(BalloonAnimation.FADE)
+            .setBalloonHighlightAnimation(BalloonHighlightAnimation.SHAKE)
+            .setLifecycleOwner(activity)
+            .setDismissWhenClicked(true)
+            .setDismissWhenTouchOutside(true)
+            .setOnBalloonDismissListener {
+                showSecondBalloon()
+            }
+            .build()
+
+        currentBalloon?.showAlignTop(nextButton)
+    }
+
+    private fun showSecondBalloon() {
+        currentBalloon = Balloon.Builder(activity)
+            .setText("Press here to send a message")
+            .setTextColorResource(android.R.color.white)
+            .setTextSize(16f)
+            .setPadding(12)
+            .setArrowSize(10)
+            .setArrowOrientation(ArrowOrientation.BOTTOM)
+            .setArrowPosition(0.82f)
+            .setCornerRadius(8f)
+            .setBackgroundColorResource(android.R.color.holo_blue_dark)
+            .setBalloonAnimation(BalloonAnimation.FADE)
+            .setBalloonHighlightAnimation(BalloonHighlightAnimation.SHAKE)
+            .setLifecycleOwner(activity)
+            .setDismissWhenClicked(true)
+            .setDismissWhenTouchOutside(true)
+            .build()
+
+        currentBalloon?.showAlignTop(activity.binding.fab)
+    }
+
+    fun dismissAll() {
+        currentBalloon?.dismiss()
+        currentBalloon = null
+    }
+}
+```
+
+Uporaba v main activitiju
+
+```
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  ...
+  tutorialManager = TutorialManager(this)
+  tutorialManager.startTutorial()
+}
+
+override fun onDestroy() {
+  super.onDestroy()
+  tutorialManager.dismissAll()
+}
+```
+
+
+### Zaslonski posnetek
+
+<img src="./screenshots/example.gif" height="500"> </img>
+
+
 ## Primer uporabe v drugi aplikaciji
 
 
